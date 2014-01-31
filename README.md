@@ -5,7 +5,7 @@ Command-line Ruby app to edit/replace namespaces. Useful for Android whitelabel 
 
 ##DESCRIPTION
 
-**namespace_editor** is a command-line Ruby app to edit/replace namespaces found within src files, which may be necessary when creating Android whitelabel apps. The new namespace replaces the existing namespace in each source file found in the given source path whose extension is one of those in the given list of extensions.
+**namespace_editor** is a command-line Ruby app to edit/replace namespaces found within src files, which may be necessary when creating Android whitelabel apps where an app is licenced to different organisations who wish to use their own namespaces. The new namespace replaces the existing namespace in each source file found in the given source path whose extension is one of those in the given list of extensions.
 
 ##OPTIONS
 * '-n', '--new_namespace': The new namespace
