@@ -16,11 +16,11 @@ option_parser = OptionParser.new do |opts|
 		options[:list] = true
 	end
 	
-	opts.on("-x EXISTING", "--existing_namespace EEE", "the existing namespace") do |existing_namespace|
+	opts.on("-x EXISTING", "--existing_namespace EXISTING", "the existing namespace") do |existing_namespace|
 		options[:existing_namespace] = existing_namespace
 	end
 	
-	opts.on("-n NEW", "--new_namespace NNN", "the new namespace") do |new_namespace|
+	opts.on("-n NEW", "--new_namespace NEW", "the new namespace") do |new_namespace|
 		options[:new_namespace] = new_namespace
 	end
 	
