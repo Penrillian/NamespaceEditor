@@ -1,0 +1,62 @@
+#! /usr/bin/env ruby
+
+require 'optparse'
+require_relative '../lib/NamespaceEditor.rb'
+require_relative '../lib/namespace_editor_version.rb'
+
+options = {:list=>false, :overwrite=>false}
+
+option_parser = OptionParser.new do |opts|
+	executable_name = File.basename($PROGRAM_NAME)
+	opts.banner = "\tReplace namespaces in src files
+	
+	Usage: #{executable_name} [options]"
+	
+	opts.on("--list", "output changed files as a list") do
+		options[:list] = true
+	end
+	
+	opts.on("-x EXISTING", "--existing_namespace EEE", "the existing namespace") do |existing_namespace|
+		options[:existing_namespace] = existing_namespace
+	end
+	
+	opts.on("-n NEW", "--new_namespace NNN", "the new namespace") do |new_namespace|
+		options[:new_namespace] = new_namespace
+	end
+	
+	opts.on("-s SRCPATH", "--src_path SRCPATH", "path to the folder containing the src files to be processed. SRCPATH will be searched and all of its sub-folders") do |src_path|
+		options[:src_path] = src_path.gsub("\\", "/")
+	end
+
+	opts.on("-e EXTNS", "--extensions EXTNS", Array, "the list of file extensions to be searched for, comma separated. E.g. cpp,h,java") do |extensions|
+		options[:extensions] = extensions
+	end
+
+	opts.on("--overwrite", "makes the changes to the source files as opposed to the default of just reporting the number of src file discovered") do
+		options[:overwrite] = true
+	end	
+	opts.on("-v", "--version", "version number. All other options will be ignored") do
+		puts "Version #{Licence_Injector::VERSION}"
+		exit
+	end	
+end
+
+option_parser.parse!
+
+puts options[:new_namespace]
+puts options[:existing_namespace]
+puts options[:src_path]
+puts options[:extensions]
+
+if options[:new_namespace].nil? || options[:existing_namespace].nil? || options[:src_path].nil? || options[:extensions].nil?
+	puts "\tError: you must supply a new namespace, an existing namespace, path to src and some file extensions"
+	puts
+	puts option_parser.help
+	STDERR.puts "ERROR: There are missing arguments"
+	exit 1
+end
+
+#puts options.inspect
+
+namespace_editor = NamespaceEditor.new options[:new_namespace], options[:existing_namespace], options[:src_path], options[:extensions], options[:list], options[:overwrite]
+namespace_editor.replace_namespace
