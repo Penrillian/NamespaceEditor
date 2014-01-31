@@ -2,7 +2,7 @@ $LOAD_PATH.push File.expand_path("../lib", __FILE__)
 require 'namespace_editor_version.rb'
 
 Gem::Specification.new do |s|
-	s.name			= "licence_injector"
+	s.name			= "namespace_editor"
 	s.version		= Namespace_Editor::VERSION
 	s.authors		= ["Barry Drinkwater"]
 	s.email			= ["barry@penrillian.com"]
