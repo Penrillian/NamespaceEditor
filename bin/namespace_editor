@@ -43,11 +43,6 @@ end
 
 option_parser.parse!
 
-puts options[:new_namespace]
-puts options[:existing_namespace]
-puts options[:src_path]
-puts options[:extensions]
-
 if options[:new_namespace].nil? || options[:existing_namespace].nil? || options[:src_path].nil? || options[:extensions].nil?
 	puts "\tError: you must supply a new namespace, an existing namespace, path to src and some file extensions"
 	puts
