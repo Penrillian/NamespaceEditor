@@ -21,6 +21,9 @@ Replace the namespace **com.example.something** with the namespace **com.example
 
 `C:\>namespace_editor -n com.example.anotherexample -x com.example.something -s C:\projects\my_project -e java,cpp --overwrite`
 
+##INSTALLATION
+`gem install namespace_editor`
+
 ##LICENCE
 BSD 2-Clause
 
