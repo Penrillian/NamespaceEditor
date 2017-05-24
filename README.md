@@ -29,8 +29,7 @@ BSD 2-Clause
 
 ##AUTHOR
 Barry Drinkwater<br>
-email: [barry@penrillian.com](mailto:barry@penrillian.com)<br>
-web: [www.penrillian.com](http://www.penrillian.com)<br>
+email: [barry.drinkwater@gmail.com](mailto:barry.drinkwater@gmail.com)<br>
 
 ##SEE ALSO
-web: [https://github.com/Penrillian/NamespaceEditor](https://github.com/Penrillian/NamespaceEditor)
+web: [https://github.com/bellabling/NamespaceEditor](https://github.com/bellabling/NamespaceEditor)
